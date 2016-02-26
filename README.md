@@ -9,9 +9,9 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 ## Methods
 
-GET
-POST
-PUT
-DELETE
-OPERATIONS
+#### GET
+#### POST
+#### PUT
+#### DELETE
+#### OPERATIONS
 
