@@ -1,7 +1,7 @@
 # REST_API
 A simple REST API created by Evan Daley.
 
-This is an implementation of the , and allows custom searches for earthquake information using a variety of parameters. 
+This is an implementation of a REST application programming interface, and allows custom searches for movie information using a variety of parameters. 
 
 ## URL 
 
