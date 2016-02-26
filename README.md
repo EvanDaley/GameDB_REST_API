@@ -1,4 +1,4 @@
-# Internet Game Database Rest API
+# Internet Game Db Rest API
 A simple REST API created by Evan Daley.
 
 This is an implementation of a REST application programming interface, and allows custom searches for movie information using a variety of parameters. 
