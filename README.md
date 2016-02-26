@@ -15,9 +15,9 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 #### DELETE
 #### OPERATIONS
 
-| Method        | Are           | Cool  |
+| Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| GET      | api/movies | Retrives all movies |
+| GET     | api/movies/search/Rome     |   Searches for movies with 'Rome' in their name |
+| GET | api/movies/count=true      |    Searches for all movies and returns the count of result |
 
