@@ -15,3 +15,9 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 #### DELETE
 #### OPERATIONS
 
+| Method        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
