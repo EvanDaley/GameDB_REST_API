@@ -10,7 +10,7 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 ## Methods
 
 #### GET
-to retrive and search data
+to retrieve and search data
 #### POST
 to add data
 #### PUT
