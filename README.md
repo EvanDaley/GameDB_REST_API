@@ -17,7 +17,7 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
-| GET      | api/movies | Retrives all movies |
+| GET      | api/movies | Retrieves all movies |
 | GET     | api/movies/search/Rome     |   Searches for movies with 'Rome' in their name |
 | GET | api/movies/count=true      |    Searches for all movies and returns the count of result |
 
