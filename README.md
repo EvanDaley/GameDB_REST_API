@@ -35,6 +35,13 @@ $.get("evandale.net/db2/get",data,queryDone);
 
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
+```javascript
+data = {
+	"id": 12,
+	"term": "Rome"
+};
+$.get("evandale.net/db2/post/",data,queryDone);
+```
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
@@ -42,7 +49,14 @@ Search for all movies where Title or Studio contains Term. If no term is specifi
 
 #### Count
 Instead of return the JSON list, return a count of the list. 
-
+```javascript
+data = {
+	"id": 12,
+	"term": "Rome",
+	"count": "true"
+};
+$.get("evandale.net/db2/post/",data,queryDone);
+```
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | count     | bool | false | Retrieves a count of found movies |
