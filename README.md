@@ -26,6 +26,11 @@ Find a single movie by id. If no id is specified all valid entries will be retur
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
 
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
 
