@@ -4,7 +4,7 @@ Internet Game Db REST API, by Evan Daley. This is an implementation of a REST ap
 
 ## URL 
 
-http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
+http://evandaley.net/db2/[METHOD[?PARAMETERS]]
 
 ## Methods
 
