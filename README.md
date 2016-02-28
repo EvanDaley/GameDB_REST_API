@@ -7,7 +7,6 @@ Internet Game Db REST API, by Evan Daley. This is an implementation of a REST ap
 http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 ## Methods
-
 ```javascript
 data = {
 				"title": title,
@@ -15,10 +14,8 @@ data = {
 				"studio": studio,
 				"price": price
 			};
-			
 $.get("evandale.net/db2/get",data,queryDone);
 ```
-
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
 | GET      | evandaley.net/db2/get | to retrieve and search entries |
