@@ -1,6 +1,6 @@
 # Internet Game Db Rest API
 
-TInternet Game Db REST API. his is an implementation of a REST application programming interface, and allows custom searches for movie information using a variety of parameters. 
+Internet Game Db REST API, by Evan Daley. This is an implementation of a REST application programming interface, and allows custom searches for movie information using a variety of parameters. 
 
 ## URL 
 
@@ -8,18 +8,46 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 ## Methods
 
-### GET
+#### GET
 to retrieve and search data
-### POST
+#### POST
 to add data
-### PUT
+#### PUT
 to update an entry or add it if not found
-### DELETE
+#### DELETE
 to delete data
-### OPTIONS
+#### OPTIONS
 to find the types of methods allowed by this API (GET, POST, PUT, DELETE, OPTIONS)
 
-### Methods
+### Query method Parameters
+These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
+
+#### Single Movie by Identifier
+If no id is specified all entries will be returned.
+
+| Parameter        | type           | default  | description
+| ------------- |:-------------:| -----:|
+| id      | Integer | null | Retrieves all movies |
+
+
+
+### Query method Parameters
+These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
+
+#### Single Movie by Identifier
+If no id is specified all entries will be returned.
+
+| Parameter        | type           | default  | description
+| ------------- |:-------------:| -----:|
+| id      | Integer | null | Retrieves all movies |
+
+
+
+
+
+##Other
+
+
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
 | GET      | api/movies | Retrieves all movies |
