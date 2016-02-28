@@ -16,7 +16,7 @@ http://evandaley.net/db2/[METHOD[?PARAMETERS]]
 | DELETE      | evandaley.net/db2/delete | to delete an entry |
 | OPTIONS      | evandaley.net/db2/options | to find the types of methods allowed by this API |
 
-## Query method Parameters
+## Query Method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
@@ -28,13 +28,7 @@ Find a single movie by id. If no id is specified all valid entries will be retur
 | id      | integer | null | Retrieves a single movie by id |
 
 #### Movies by Query Term
-Search for all movies where Title or Studio contains Term. 
-
-If no term is specified all valid entries will be returned. 
-
-Some text here  to test things.<br>
-More text. <br>
-More textness.<br>
+Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
@@ -47,11 +41,16 @@ Instead of return the JSON list, return a count of the list.
 | ------------- |:-------------:|:-------------:| -----:|
 | count     | bool | false | Retrieves a count of found movies |
 
-
-## Update method Parameters
+## Post Method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
-## Examples
+## Put Method Parameters
+These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
+
+## Delete Method Parameters
+These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
+
+## Further Examples
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
 | GET     | evandaley.net/db2/get      |   Searches for movies with 'Rome' in their name |
