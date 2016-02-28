@@ -8,6 +8,14 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 ## Methods
 
+| Method        | Url           | Action  |
+| ------------- |:-------------:| -----:|
+| GET      | evandaley.net/db2/get | Retrieves all movies |
+| POST      | evandaley.net/db2/get | Retrieves all movies |
+| PUT      | evandaley.net/db2/get | Retrieves all movies |
+| DELETE      | evandaley.net/db2/get | Retrieves all movies |
+| OPTIONS      | evandaley.net/db2/options | Retrieves all movies |
+
 ##### GET
 to retrieve and search entries.
 ##### POST
@@ -48,15 +56,8 @@ Instead of return the JSON list, return a count of the list.
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 
-
-
-
-##Other
-
-
+## Examples
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
-| GET      | api/movies | Retrieves all movies |
-| GET     | api/movies/search/Rome     |   Searches for movies with 'Rome' in their name |
-| GET | api/movies/count=true      |    Searches for all movies and returns the count of result |
-
+| GET     | evandaley.net/db2/get      |   Searches for movies with 'Rome' in their name |
+| GET | evandaley.net/db2/get/?count=true      |    Searches for all movies and returns the count of result |
