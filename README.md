@@ -33,12 +33,15 @@ $.get("evandale.net/db2/get",data,queryDone);
 
 
 #### Movies by Query Term
-Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
+Search for all movies where Title or Studio contains Term. 
 ```javascript
 data = {
 	"id": 12,
 	"term": "Rome"
 };
+```
+If no term is specified all valid entries will be returned. 
+```javascript
 $.get("evandale.net/db2/post/",data,queryDone);
 ```
 Some text here  to test things.<br>
