@@ -9,13 +9,13 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 ## Methods
 
 #### GET
-to retrieve and search data
+to retrieve and search entries.
 #### POST
-to add data
+to add an entry.
 #### PUT
-to update an entry or add it if not found
+to update an entry or add it if not found.
 #### DELETE
-to delete data
+to delete an entry.
 #### OPTIONS
 to find the types of methods allowed by this API (GET, POST, PUT, DELETE, OPTIONS)
 
