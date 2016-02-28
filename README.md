@@ -41,9 +41,9 @@ data = {
 };
 $.get("evandale.net/db2/post/",data,queryDone);
 ```
-Some text here  to test things.
-More text. 
-More textness.
+Some text here  to test things.<br>
+More text. <br>
+More textness.<br>
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
