@@ -52,6 +52,6 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 
 ## Further Examples
 | Method        | Url           | Action  |
-| ------------- |:-------------:| -----:|
-| GET     | evandaley.net/db2/get      |   Searches for movies with 'Rome' in their name |
+| :------------- |:-------------| :-----|
+| GET     | evandaley.net/db2/get/?term=Rome      |   Searches for movies with 'Rome' in their title or studio |
 | GET | evandaley.net/db2/get/?count=true      |    Searches for all movies and returns the count of result |
