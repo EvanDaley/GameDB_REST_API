@@ -8,6 +8,17 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 ## Methods
 
+```javascript
+data = {
+				"title": title,
+				"year": year,
+				"studio": studio,
+				"price": price
+			};
+			
+$.get("evandale.net/db2/get",data,queryDone);
+```
+
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
 | GET      | evandaley.net/db2/get | to retrieve and search entries |
@@ -22,10 +33,6 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 #### Single Movie by Identifier
 
 Find a single movie by id. If no id is specified all valid entries will be returned.
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
