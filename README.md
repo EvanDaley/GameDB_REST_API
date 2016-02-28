@@ -26,7 +26,6 @@ Find a single movie by id. If no id is specified all valid entries will be retur
 data = { "id": 12 };
 $.get("evandale.net/db2/get",data,queryDone);
 ```
-
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
@@ -42,7 +41,7 @@ data = {
 };
 $.get("evandale.net/db2/post/",data,queryDone);
 ```
-
+Some text here  to test things.
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | term     | string | null | Retrieves a list of movies where Title or Studio is LIKE term |
