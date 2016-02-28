@@ -20,16 +20,17 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
 Find a single movie by id. If no id is specified all valid entries will be returned.
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
+
 
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
