@@ -30,8 +30,6 @@ $.get("evandale.net/db2/get",data,queryDone);
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
 
-
-
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. 
 ```javascript
@@ -40,10 +38,9 @@ data = {
 	"term": "Rome"
 };
 ```
+
 If no term is specified all valid entries will be returned. 
-```javascript
-$.get("evandale.net/db2/post/",data,queryDone);
-```
+
 Some text here  to test things.<br>
 More text. <br>
 More textness.<br>
