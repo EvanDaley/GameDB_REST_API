@@ -27,7 +27,7 @@ If no id is specified all entries will be returned.
 
 | Parameter        | type           |   default    |   description  |
 | ------------- |:-------------:|:-------------:| -----:|
-| id      | Integer | null | Retrieves all movies |
+| id      | integer | null | Retrieves a single movie by id |
 
 
 ## Query method Parameters
