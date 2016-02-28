@@ -19,25 +19,24 @@ to delete an entry.
 #### OPTIONS
 to find the types of methods allowed by this API (GET, POST, PUT, DELETE, OPTIONS)
 
-### Query method Parameters
+## Query method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
 If no id is specified all entries will be returned.
 
-| Parameter        | type           | default  | description
+| Parameter        | type           | default  | description |
 | ------------- |:-------------:| -----:|
 | id      | Integer | null | Retrieves all movies |
 
 
-
-### Query method Parameters
+## Query method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
 If no id is specified all entries will be returned.
 
-| Parameter        | type           | default  | description
+| Parameter        | type           | default  | description |
 | ------------- |:-------------:| -----:|
 | id      | Integer | null | Retrieves all movies |
 
