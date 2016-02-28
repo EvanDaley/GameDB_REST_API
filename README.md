@@ -24,7 +24,7 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 Find a single movie by id. If no id is specified all valid entries will be returned.
 
 | parameter        | type           |   default    |  description  |
-| ------------- |:-------------:|:-------------:| -----:|
+| ------------- |:-------------:|:-------------:| :-----:|
 | id      | integer | null | Retrieves a single movie by id |
 
 #### Movies by Query Term
