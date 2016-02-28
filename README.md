@@ -16,7 +16,7 @@ http://evandaley.net/db2/[METHOD[?PARAMETERS]]
 | DELETE      | evandaley.net/db2/delete | to delete an entry |
 | OPTIONS      | evandaley.net/db2/options | to find the types of methods allowed by this API |
 
-## Query Method Parameters
+## Query method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
@@ -41,13 +41,13 @@ Instead of return the JSON list, return a count of the list.
 | ------------- |:-------------:|:-------------:| -----:|
 | count     | bool | false | Retrieves a count of found movies |
 
-## Post Method Parameters
+## Post method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
-## Put Method Parameters
+## Put method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
-## Delete Method Parameters
+## Delete method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 ## Further Examples
