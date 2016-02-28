@@ -9,7 +9,7 @@ http://evandaley.net/db2/[METHOD[?PARAMETERS]]
 ## Methods
 
 | Method        | Url           | Action  |
-| ------------- |:-------------:| :-----:|
+| ------------- |:-------------:| :-----|
 | GET      | evandaley.net/db2/get | to retrieve and search entries |
 | POST      | evandaley.net/db2/post | to add an entry |
 | PUT      | evandaley.net/db2/put | to update an entry or add it if not found |
