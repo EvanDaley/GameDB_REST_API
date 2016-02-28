@@ -49,7 +49,7 @@ Instead of return the JSON list, return a count of the list.
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 ```javascript
-	data = {
+data = {
 	"title": title,
 	"year": year,
 	"studio": studio,
