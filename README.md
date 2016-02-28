@@ -16,17 +16,6 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 | DELETE      | evandaley.net/db2/delete | to delete an entry |
 | OPTIONS      | evandaley.net/db2/options | to find the types of methods allowed by this API |
 
-##### GET
-to retrieve and search entries.
-##### POST
-to add an entry.
-##### PUT
-to update an entry or add it if not found.
-##### DELETE
-to delete an entry.
-##### OPTIONS
-to find the types of methods allowed by this API (GET, POST, PUT, DELETE, OPTIONS).
-
 ## Query method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
