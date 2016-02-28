@@ -23,22 +23,29 @@ to find the types of methods allowed by this API (GET, POST, PUT, DELETE, OPTION
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
-If no id is specified all entries will be returned.
+Find a single movie by id. If no id is specified all valid entries will be returned.
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
 
+#### Movies by Query Term
+Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
 
-## Query method Parameters
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| -----:|
+| term     | string | null | Retrieves a list of movies where Title or Studio is LIKE term |
+
+#### Count
+Instead of return the JSON list, return a count of the list. 
+
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| -----:|
+| count     | bool | false | Retrieves a count of found movies |
+
+
+## Update method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
-
-#### Single Movie by Identifier
-If no id is specified all entries will be returned.
-
-| Parameter        | type           | default  | description |
-| ------------- |:-------------:| -----:|
-| id      | Integer | null | Retrieves all movies |
 
 
 
