@@ -20,11 +20,12 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 #### Single Movie by Identifier
+
+Find a single movie by id. If no id is specified all valid entries will be returned.
 ```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
 ```
-Find a single movie by id. If no id is specified all valid entries will be returned.
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
