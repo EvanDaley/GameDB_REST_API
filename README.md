@@ -10,11 +10,11 @@ http://evandaley.net/db2/api.php/[METHOD[?PARAMETERS]]
 
 | Method        | Url           | Action  |
 | ------------- |:-------------:| -----:|
-| GET      | evandaley.net/db2/get | Retrieves all movies |
-| POST      | evandaley.net/db2/get | Retrieves all movies |
-| PUT      | evandaley.net/db2/get | Retrieves all movies |
-| DELETE      | evandaley.net/db2/get | Retrieves all movies |
-| OPTIONS      | evandaley.net/db2/options | Retrieves all movies |
+| GET      | evandaley.net/db2/get | Retrieve all Movies |
+| POST      | evandaley.net/db2/post | Add a Movie |
+| PUT      | evandaley.net/db2/put | Update Movie by id |
+| DELETE      | evandaley.net/db2/delete | Remove Movie by id |
+| OPTIONS      | evandaley.net/db2/options | Retrieve methods allowed by API |
 
 ##### GET
 to retrieve and search entries.
