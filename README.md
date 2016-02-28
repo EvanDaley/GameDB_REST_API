@@ -23,7 +23,8 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 
 Find a single movie by id. If no id is specified all valid entries will be returned.
 ```javascript
-$.get("evandale.net/db2/get/?id=12",data,queryDone);
+data = { "id": 12 };
+$.get("evandale.net/db2/get",data,queryDone);
 ```
 
 | parameter        | type           |   default    |  description  |
