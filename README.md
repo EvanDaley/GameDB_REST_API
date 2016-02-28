@@ -22,10 +22,7 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 #### Single Movie by Identifier
 
 Find a single movie by id. If no id is specified all valid entries will be returned.
-```javascript
-data = { "id": 12 };
-$.get("evandale.net/db2/get",data,queryDone);
-```
+
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | id      | integer | null | Retrieves a single movie by id |
@@ -45,14 +42,7 @@ More textness.<br>
 
 #### Count
 Instead of return the JSON list, return a count of the list. 
-```javascript
-data = {
-	"id": 12,
-	"term": "Rome",
-	"count": "true"
-};
-$.get("evandale.net/db2/post/",data,queryDone);
-```
+
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| -----:|
 | count     | bool | false | Retrieves a count of found movies |
@@ -60,17 +50,6 @@ $.get("evandale.net/db2/post/",data,queryDone);
 
 ## Update method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
-
-```javascript
-data = {
-	"title": title,
-	"year": year,
-	"studio": studio,
-	"price": price
-};
-$.get("evandale.net/db2/post/",data,queryDone);
-```
-
 
 ## Examples
 | Method        | Url           | Action  |
