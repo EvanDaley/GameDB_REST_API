@@ -44,22 +44,38 @@ Instead of return the JSON list, return a count of the list.
 ## Post method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
-#### Single Movie with Fields
+#### Post Movie with Optional Fields
 
 Create a single movie with title, studio, price, year. If any fields are left unspecified a value of "null" will be used.
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| :-----:|
-| title      | string | null | Add a title for the movie |
-| studio      | string | null | Add a studio for the movie |
-| price      | decimal | null | Add a price for the movie |
-| year      | integer | null | Add a year for the movie |
+| title      | string | null | Specify a title for the movie |
+| studio      | string | null | Specify a studio for the movie |
+| price      | decimal | null | Specify a price for the movie |
+| year      | integer | null | Specify a year for the movie |
 
 ## Put method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
+Post or Update an entry by ID. If the ID is in use the fields will be updated. If the ID does not exist a new entry will be cretaed. If any fields are left unspecified a value of "null" will be used.
+
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| :-----:|
+| id      | int | null | Specify the movie we want to update by ID. If ID is not found a new entry will be created. |
+| title      | string | null | Specify a title for the movie |
+| studio      | string | null | Specify a studio for the movie |
+| price      | decimal | null | Specify a price for the movie |
+| year      | integer | null | Specify a year for the movie |
+
 ## Delete method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
+
+Delete a movie by ID. 
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| :-----:|
+| id      | int | null |  Specify the movie we want to delete by ID |
+
 
 ## Further Examples
 | Method        | Url           | Action  |
