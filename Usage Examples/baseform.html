@@ -1,0 +1,517 @@
+<html>
+	<head>
+		<title>Movie Maintenance</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style1.css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		
+	</head>
+	<body>
+		<center><h1>Movie Maintenance</h1></center>
+	
+		<div class = "container">
+			<div class="row">
+				<div>
+					<table name="maintable" id = "movieTable" class="table table-bordered">
+						<th>Title</th>
+						<th>Year</th>
+						<th>Studio</th>
+						<th>Price</th>
+						<th>Actions
+			
+						<tr>
+							<td width="150">
+								Animal House
+							</td>
+							<td width="50"> 
+								1978
+							</td>
+							<td width="100">
+								Universal
+							</td>
+							<td width="60">
+								21.49
+							</td>
+							<td width="140">
+								<input type="submit" class="btn" value="Edit">
+								<input type="submit" class="btn" value="Delete">
+							</td>
+						</tr>
+
+						<tr>
+							<td width="150">
+								Caddyshack
+							</td>
+							<td width="50"> 
+								1980
+							</td>
+							<td width="100">
+								Orion Pictures
+							</td>
+							<td width="60">
+								19.95
+							</td>
+							<td width="140">
+								<input type="submit" class="btn" value="Edit">
+								<input type="submit" class="btn" value="Delete">
+							</td>
+						</tr>
+
+						<td width="150">
+								Godfather, The
+							</td>
+							<td width="50"> 
+								1972
+							</td>
+							<td width="100">
+								Paramount
+							</td>
+							<td width="60">
+								24.94
+							</td>
+							<td width="140">
+								<input type="submit" class="btn" value="Edit">
+								<input type="submit" class="btn" value="Delete">
+							</td>
+						</tr>
+				
+					</table>
+					<input type="button" id= "btn_addMovie" value="Add Movie" class="btn"/>
+						
+					<br>
+					<br>
+					<br>
+					
+					<div id="infoArea">
+						 <fieldset  style="width: 1200px">
+							<legend id="legend">Movie Information</legend>
+							<label >Title:</label>
+							<input type="text" id = "myTitle"></input><br>
+							<label >Studio:</label>
+							<input type="text" id = "myStudio"><br>
+							<label >Year:</label>
+							<input type="text" id = "myYear"><br>
+							<label >Price:</label>
+							<input type="text" id = "myPrice"><br><br>
+							<input type="submit" id="btn_confirm" name="btn_confirm" value= "Confirm" class="btn">
+							<input type="submit" id="btn_cancel" name="btn_cancel" value= "Cancel" class="btn">
+							
+						</fieldset>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<script>
+		
+		var mode = '';		// this will be set to 'add_mode' or 'edit_mode' to show what operation mode we are in
+		var row_id = '';	// this is the row id of the last 'Edit' button that was pressed
+
+		// ------------------
+		// CONTACT API
+		// ------------------
+		
+		// grab the entire list of movies 
+		function loadList(){
+			//console.log( "preparing to grab the json!" );
+			$.get("api/get.php","meh",gotList);
+		}
+		
+		// remove one movie (this is based on the id of the html element in the table)
+		function remove(myId)
+		{
+			console.log("deleting: " + myId);
+			
+			// find the row based on id
+			search = "#" + myId;
+			trid = $(search).closest('tr').attr('id');
+			
+			// grab the relevant data from the row
+			search = "#" + trid;
+			rowTitle = $(search).find("#title").html();
+			rowYear = $(search).find("#year").html();
+			rowStudio = $(search).find("#studio").html();
+			rowPrice = $(search).find("#price").html();
+			
+			
+			
+			
+			
+			// easy fix
+			// once we have the unique id as a table element we can 
+			// simply grab it and use it as the key for deletion
+			
+			
+			
+			
+			
+			
+			console.log("Deleting based on: " + rowTitle + ", " + rowYear + ", " + rowStudio + ", " + rowPrice);
+			
+			// now find this record and remove it using a call to php
+			// delete.php
+			// check for success?
+			
+			data = {
+				"title": rowTitle,
+				"year": rowYear,
+				"studio": rowStudio,
+				"price": rowPrice
+			};
+			
+			// TODO: call api.php with ajax
+			$.post("api/delete.php",data,queryDone);
+			
+			// loadList(); <-- instead of doing this we use queryDone when the php returns
+		}
+		
+		
+		function save()
+		{
+			if(hasTitle() && yearValid())
+			{
+				if(priceValid())
+				{
+					if(window.mode == 'edit_mode')
+					{
+						//console.log('saving changes');
+						
+						// note: the current table row we are editing is saved in window.row_id
+						console.log("Current row: " + window.row_id);
+						
+						// get the old data from the record we are editing (so we can search for it in the db)
+						search = "#" + window.row_id;
+						prevTitle = $(search).find("#title").html();
+						prevYear = $(search).find("#year").html();
+						prevStudio = $(search).find("#studio").html();
+						prevPrice = $(search).find("#price").html();
+
+						console.log("Old values: '" + prevTitle + "', '" + prevYear + "', '" + prevStudio + "', '" + prevPrice + "'");		
+						
+						// grab the new data
+						newTitle = $('#myTitle').val();
+						newYear = $('#myYear').val();
+						newStudio = $('#myStudio').val();
+						newPrice = $('#myPrice').val();
+						
+						//console.log("Replacing w: " + rowTitle + ", " + rowYear + ", " + rowStudio + ", " + rowPrice);
+
+						// toss everything into an array
+						data = {
+							"prevTitle": prevTitle,
+							"prevYear": prevYear,
+							"prevStudio": prevStudio,
+							"prevPrice": prevPrice,
+							"newTitle": newTitle,
+							"newYear": newYear,
+							"newStudio": newStudio,
+							"newPrice": newPrice
+						};
+						
+						//console.log(prevTitle);
+						
+						// now send prev items and new items to edit.php
+						$.post("api/put.php",data,queryDone);
+						
+					}
+					else if(window.mode == 'add_mode')
+					{
+						//console.log('Saving new entry');
+						data = {
+							"title": $("#myTitle").val(),
+							"year": $("#myYear").val(),
+							"studio": $("#myStudio").val(),
+							"price": $("#myPrice").val()
+						};
+						
+						$.post("api/add.php",data,queryDone);
+					}
+					
+					//loadList(); <-- instead we use queryDone
+					cancel();
+				}
+				else
+				{
+					alert("Sorry, the price is invalid");
+				}
+			}
+			else
+			{
+				alert("Sorry, the information you entered is invalid.");
+			}
+		}
+
+		
+		// ------------------
+		// END CONTACT API
+		// ------------------
+		
+		// ------------------
+		// FORM VALIDATION
+		// ------------------
+
+		function hasTitle()
+		{
+			title = $('#myTitle').val();
+			
+			if(!title || 0 === title.length)
+				return false;
+			else
+				return true;
+		}
+		
+		function yearValid()
+		{
+			// grab year
+			year = $('#myYear').val();
+			
+			// check if exists
+			if(!year || 0 === year.length)
+				return false;
+
+			// check if value is valid
+			var y = parseInt(year);
+			if(y < 1000 || y > 9999)
+			{
+				return false;
+			}
+			
+			return true;
+		}
+		
+		function priceValid()
+		{
+			// must be present
+			// grab price
+			price = $('#myPrice').val();
+			
+			// check if exists
+			if(!price || 0 === price.length)
+				return false;
+				
+			// must be in the form of ####.##
+			if(isNaN(price))
+			{
+				return false;
+			}
+		
+			return true;
+		}
+		
+		// ------------------
+		// END FORM VALIDATION
+		// ------------------
+		
+		// ------------------
+		// FORM MANIPULATION
+		// ------------------
+		
+		function cancel()
+		{
+			clearFields();
+			resetButtons();
+			$("#infoArea").hide();
+		}
+		
+		function displayFields(mode, myId)
+		{
+			$("#infoArea").show();
+			clearFields();
+			
+			// disable all buttons
+			$("input[type=button]").prop('disabled',true);
+			
+			if(mode == 'edit')
+			{		
+				window.mode = 'edit_mode';
+				
+				// update the legend to show the "Edit Movie Info" heading
+				$("#legend").text("Edit Movie Information");
+				
+				// find the row that the button was on
+				search = "#" + myId;
+				trid = $(search).closest('tr').attr('id');
+				
+				// set the window.row_id. This is a global variable that indicated what row we are editing
+				window.row_id = trid;
+				
+				// grab the relevant data from this row and update the text fields
+				search = "#" + trid;
+				var rowTitle = $(search).find("#title").html();
+				var rowYear = $(search).find("#year").html();
+				var rowStudio = $(search).find("#studio").html();
+				var rowPrice = $(search).find("#price").html();
+				
+				// push the data into the fields
+				setFields(rowTitle, rowYear, rowStudio, rowPrice);
+			}
+			else
+			{
+				window.mode = 'add_mode';
+				
+				// update the legend to show the "Add Movie" heading
+				$("#legend").text("Add Movie");
+			}
+		}
+
+		// This is a custom method for clearing all input fields
+		function clearFields()
+		{
+			setFields('','','','');
+		}
+
+		// Enable all the buttons
+		function resetButtons()
+		{
+			//console.log("Resetting buttons");
+			$("input[type=button]").prop('disabled',false);
+		}
+
+		// This is a custom method for setting all the input fields
+		function setFields(rowTitle, rowYear, rowStudio, rowPrice)
+		{
+			$('#myTitle').val(rowTitle);
+			$('#myYear').val(rowYear);
+			$('#myStudio').val(rowStudio);
+			$('#myPrice').val(rowPrice);
+		}
+		
+		// ------------------
+		// END FORM MANIPULATION
+		// ------------------
+
+		function gotList(dt)
+		{
+			console.log( "we got something back!" );
+			//console.log(dt);
+			
+			html = "";
+			parsed = JSON.parse(dt);
+			
+				// Create table heading
+			//html = "<br><table border='1' width='500px' >";
+			
+			html += "<tr>";
+			html += "<th>Title</th>";
+			html += "<th>Year</th>";
+			html += "<th>Studio</th>";
+			html += "<th>Price</th>";
+			// html += "<th>GUID</th>";
+			html += "<th>Actions</th>";
+			
+			html += "</tr>"		
+			
+			for(var ix = 0; ix < parsed.length; ix++)
+			{
+				//console.log(parsed[ix]["title"]);
+				html += "<tr id='row_" + ix + "'>";
+				//html += "<option>";
+				html += "<td id='title'>"
+				html += parsed[ix]["title"];
+				html += "</td>"
+				
+				html += "<td id='year'>";
+				html += parsed[ix]["year"];
+				html += "</td>"
+				
+				html += "<td id='studio'>";		
+				html += parsed[ix]["studio"];
+				html += "</td>";
+				
+				// format price so that it has 2 decimal places
+				html += "<td id='price'>"
+				$price = parsed[ix]["price"];
+				$price = parseFloat(Math.round($price * 100) / 100).toFixed(2);
+				html += $price;
+				html += "</td>";
+				
+				// html += "<td id='guid'>";
+				// html += parsed[ix]["id"];
+				// html += "</td>";
+				
+				html += "<td width='140'>";
+				html += "<input type='button' id= ed_" + ix + " class='btn' value='Edit'> ";
+				html += "<input type='button' id= de_" + ix + " class='btn' value='Delete'>";
+				html += "</td>";
+				
+				html += "</tr>";
+				
+			}
+			
+			//console.log(html);
+			
+			// Push the new html into our table
+			$("#movieTable").html(html);
+			
+			// Select all the edit buttons we just built and assign them the edit function
+			$("[id*='ed']").click(function()
+			{
+				//console.log(this.id);
+				displayFields('edit',this.id);
+			});
+			
+			$("[id*='de']").click(function()
+			{
+				//console.log(this.id);
+				remove(this.id);
+			});
+			
+		}
+
+		// a callback that recieves json after we contact the api
+		function queryDone(dt){
+			console.log("Response from query: " + dt);
+			
+			if(dt == '')
+			{
+				console.log("Success!");
+			}
+			else
+			{
+				console.log("There was an error with the query");
+			}
+			
+			// update our list with a GET
+			loadList();
+		}
+
+		// set up our buttons and load the list of movies
+		function setup()
+		{
+			$("#btn_addMovie").click(function()
+			{
+				displayFields('add','');
+			});
+			
+			$("#btn_cancel").click(function()
+			{
+				cancel();
+			});
+			
+			$("#btn_confirm").click(function()
+			{
+				save();
+			});
+			
+			//console.log( "setting up!" );
+			loadList();
+			cancel();
+		}
+
+		// when the document is ready call setup()
+		$( document ).ready(function() {
+			//console.log( "ready!" );
+			setup();
+		});
+
+
+		</script>
+
+	</body>
+</html>
