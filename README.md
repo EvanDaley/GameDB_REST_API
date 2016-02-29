@@ -76,7 +76,6 @@ Delete a movie by ID.
 | ------------- |:-------------:|:-------------:| :-----:|
 | id      | integer | null | Delete a single movie by id |
 
-
 ## Further Examples
 | Method        | Url           | Action  |
 | :------------- |:-------------| :-----|
