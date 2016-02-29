@@ -74,7 +74,7 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 Delete a movie by ID. 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| :-----:|
-| id      |  int  |  null  |  Specify the movie we want to delete by ID |
+| id      | integer | null | Delete a single movie by id |
 
 
 ## Further Examples
