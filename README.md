@@ -84,4 +84,4 @@ Delete a movie by ID.
 | GET | evandaley.net/db2/get/?count=true |    Searches for all movies and returns the count of result |
 | PUT | evandaley.net/db2/put/?title=mymovie&id=21 |    Updates movie with id=21 if it exists. Otherwise creates the movie |
 | DELETE | evandaley.net/db2/delete/id=21 |    Delete movie with id=21 if it exists |
-| POST | evandaley.net/db2/post/title=somemovie&studio=my+Studio&price=10 |    Create "some movie" with price=10 and Studio = "My Studio |
+| POST | evandaley.net/db2/post/title=rome |    Create movie with title=rome |
