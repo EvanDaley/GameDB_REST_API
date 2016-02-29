@@ -44,6 +44,17 @@ Instead of return the JSON list, return a count of the list.
 ## Post method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
+#### Single Movie with Fields
+
+Create a single movie with title, studio, price, year. If any fields are left unspecified a value of "null" will be used.
+
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| :-----:|
+| title      | string | null | Add a title for the movie |
+| studio      | string | null | Add a studio for the movie |
+| price      | decimal | null | Add a price for the movie |
+| year      | integer | null | Add a year for the movie |
+
 ## Put method Parameters
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
