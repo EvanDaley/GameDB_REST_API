@@ -74,7 +74,7 @@ These parameters should be submitted as key=value pairs using the HTTP GET metho
 Delete a movie by ID. 
 
 | parameter        | type           |   default    |  description  |
-| ------------- |:-------------:|:-------------:| :-----:|
+| :------------- |:-------------|:-------------| :-----|
 | id      | integer | null | Delete a single movie by id |
 
 ## Further Examples
@@ -82,3 +82,6 @@ Delete a movie by ID.
 | :------------- |:-------------| :-----|
 | GET     | evandaley.net/db2/get/?term=Rome      |   Searches for movies with 'Rome' in their title or studio |
 | GET | evandaley.net/db2/get/?count=true      |    Searches for all movies and returns the count of result |
+| PUT | evandaley.net/db2/put/?title=mymovie&id=21      |    Updates movie with id=21 if it exists. Otherwise creates the movie |
+| DELETE | evandaley.net/db2/delete/id=21      |    Delete movie with id=21 if it exists |
+| POST | evandaley.net/db2/post/title=some+movie&studio=my+Studio&price=10     |    Create "some movie" with price=10 and Studio = "My Studio. |
