@@ -27,10 +27,6 @@ Find a single movie by id. If no id is specified all valid entries will be retur
 | ------------- |:-------------:|:-------------:| :-----:|
 | id      | integer | null | Retrieves a single movie by id |
 
-| parameter        | type           |   default    |  description  |
-| ------------- |:-------------:|:-------------:| :-----:|
-| id      | integer | null | Retrieves a single movie by id |
-
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
 
@@ -79,7 +75,7 @@ Delete a movie by ID.
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| :-----:|
-| id      | integer | null | Retrieves a single movie by id |
+| id      | integer | null | Delete a single movie by id |
 
 ## Further Examples
 | Method        | Url           | Action  |
