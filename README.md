@@ -27,6 +27,10 @@ Find a single movie by id. If no id is specified all valid entries will be retur
 | ------------- |:-------------:|:-------------:| :-----:|
 | id      | integer | null | Retrieves a single movie by id |
 
+| parameter        | type           |   default    |  description  |
+| ------------- |:-------------:|:-------------:| :-----:|
+| id      | integer | null | Retrieves a single movie by id |
+
 #### Movies by Query Term
 Search for all movies where Title or Studio contains Term. If no term is specified all valid entries will be returned. 
 
@@ -72,9 +76,10 @@ Post or Update an entry by ID. If the ID is in use the fields will be updated. I
 These parameters should be submitted as key=value pairs using the HTTP GET method and may not be specified more than once; if a parameter is submitted multiple times the result is undefined. 
 
 Delete a movie by ID. 
+
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| :-----:|
-| id      | integer | null | Delete a single movie by id |
+| id      | integer | null | Retrieves a single movie by id |
 
 ## Further Examples
 | Method        | Url           | Action  |
