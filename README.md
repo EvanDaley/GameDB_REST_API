@@ -62,7 +62,7 @@ Post or Update an entry by ID. If the ID is in use the fields will be updated. I
 
 | parameter        | type           |   default    |  description  |
 | ------------- |:-------------:|:-------------:| :-----:|
-| id      | int | null | Specify the movie we want to update by ID. If ID is not found a new entry will be created. |
+| id      | int | null | Find movie to update by ID. If entry is not found a new entry will be created. |
 | title      | string | null | Specify a title for the movie |
 | studio      | string | null | Specify a studio for the movie |
 | price      | decimal | null | Specify a price for the movie |
